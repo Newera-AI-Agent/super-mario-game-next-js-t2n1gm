@@ -1,0 +1,14 @@
+import{COLORS,TILE,W,H,JF,SP}from'./const.js';
+import{createLevel}from'./level.js';
+import{createPlayer}from'./player.js';
+import{updatePlayer}from'./collide.js';
+import{createEnemies,updateEnemies}from'./enemies.js';
+import{createCoins,checkCoin}from'./coins.js';
+import{renderGame}from'./render.js';
+const c=document.getElementById('g');c.width=W;c.height=H;
+const ctx=c.getContext('2d');
+let p=createPlayer(),lvl=createLevel();
+let es=createEnemies(15),cs=createCoins(15);
+let sc=0,cc=0,li=3,st='playing',cam={x:0,y:0},fr=0;
+let k={left:0,right:0,up:0,jump:0};
+window.gk=k;
